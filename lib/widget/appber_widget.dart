@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:webcoderit/utils/color.dart';
 import 'package:webcoderit/utils/text_style.dart';
-PreferredSizeWidget Appber({String? appberTitle}){
+PreferredSizeWidget Appber({ required String? appberTitle}){
   return AppBar(
     elevation: 0.0,
     backgroundColor: AppColors.appberColor,

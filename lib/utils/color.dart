@@ -3,6 +3,7 @@
  class AppColors {
 
    static const Color appberColor = Color(0xffFFFFFF);
+   static const Color subcribeSnBgColor = Color(0xff0C2A4B);
 
    static const Color rectangeWiget1Color = Color(0xffEFEDF6);
 
