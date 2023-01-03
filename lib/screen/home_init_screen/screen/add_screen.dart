@@ -55,6 +55,7 @@ class AddScreen extends StatelessWidget {
                 ],
               ),
               HeadingTxtWidget(lHeadingTxt: 'Explore Categories',rHeadingTxt: 'Show All',),
+
               RectangleWidget2(),
               HeadingTxtWidget(lHeadingTxt: 'Popular Courses',rHeadingTxt: 'Show All',),
              Center(

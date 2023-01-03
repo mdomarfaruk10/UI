@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:webcoderit/screen/home_init_screen/home_init_screen.dart';
 import 'package:webcoderit/utils/color.dart';
 class MyOnboardingScreen extends StatefulWidget {
   const MyOnboardingScreen({Key? key}) : super(key: key);
@@ -10,10 +12,10 @@ class MyOnboardingScreen extends StatefulWidget {
 
 class _MyOnboardingScreenState extends State<MyOnboardingScreen> {
   final Controler =PageController();
+  bool isLastPage = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
       body:Container(
         decoration: BoxDecoration(
           image: DecorationImage(
@@ -28,6 +30,9 @@ class _MyOnboardingScreenState extends State<MyOnboardingScreen> {
             children: [
               PageView(
                 controller: Controler,
+                onPageChanged: (index){
+                  setState(() =>isLastPage =index ==2);
+                },
                 children: [
                   Container(
                     padding: EdgeInsets.all(20),
@@ -96,7 +101,20 @@ class _MyOnboardingScreenState extends State<MyOnboardingScreen> {
                   ),
                 ],
               ),
-              Container(
+
+              isLastPage?
+                  Container(
+                    alignment: Alignment(0,0.75),
+                    child: TextButton(
+                      onPressed: ()async{
+                        final prefs = await SharedPreferences.getInstance();
+                       prefs.setBool("showHome", true);
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>HomeInitScreen()));
+                      },
+                      child: const Text("Get Started",style: TextStyle(fontSize: 24),),
+                    ),
+                  )
+                  :Container(
                 alignment: Alignment(0,0.75),
                 child:Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,

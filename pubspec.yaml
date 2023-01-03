@@ -40,6 +40,7 @@ dependencies:
   http:
   smooth_page_indicator: ^1.0.0+2
   flutter_rating_stars: ^1.0.3+4
+  shared_preferences: ^2.0.15
 
 dev_dependencies:
   flutter_test:

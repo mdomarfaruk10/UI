@@ -4,6 +4,7 @@ import 'package:webcoderit/screen/home_init_screen/screen/home_screen.dart';
 import 'package:webcoderit/screen/home_init_screen/screen/message_screen.dart';
 import 'package:webcoderit/screen/home_init_screen/screen/person_screen.dart';
 import 'package:webcoderit/screen/home_init_screen/screen/search_screen.dart';
+import 'package:webcoderit/screen/test_screen.dart';
 import 'package:webcoderit/utils/color.dart';
 class HomeInitScreen extends StatefulWidget {
   const HomeInitScreen({Key? key}) : super(key: key);
